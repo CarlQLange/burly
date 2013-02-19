@@ -1,0 +1,12 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/burly'
+require_relative '../lib/trollop'
+
+opts = Trollop::options do
+	opt :display_context
+	opt :display_colours
+end
+
+burly = Burly::Burly.new(ARGF.read, opts)
+burly.display_urls
