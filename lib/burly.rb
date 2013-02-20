@@ -22,7 +22,9 @@ module Burly
 	end
 
 	def get_context (url, text)
-		url
+		start_of_context = text.index(url) - 8
+		end_of_context = text.index(url) + url.length + 8
+		"...#{text[start_of_context..end_of_context]}..."
 	end
 
 	def display_urls
